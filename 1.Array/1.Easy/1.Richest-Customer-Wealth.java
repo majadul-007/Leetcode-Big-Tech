@@ -2,7 +2,6 @@ class Solution {
     public int maximumWealth(int[][] accounts) {
 
 
-
         //keep track of richest customer
         int rich = 0;
 
@@ -14,6 +13,7 @@ class Solution {
 
             //go through each account and add it to sum
             for (int accnt : customer) {
+
 
                 sum += accnt;
             }
