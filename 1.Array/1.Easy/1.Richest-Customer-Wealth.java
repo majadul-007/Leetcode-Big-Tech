@@ -1,33 +1,25 @@
 class Solution {
-    public int maximumWealth(int[][] accounts) {
 
+  public int maximumWealth(int[][] accounts) {
+    
+    //keep track of richest customer
+    int rich = 0;
 
-        //keep track of richest customer
-        int rich = 0;
+    //go through all the customer accounts
+    for (int[] customer : accounts) {
+      //keep track of sum
+      int sum = 0;
 
-        //go through all the customer accounts
-        for (int[] customer : accounts) {
+      //go through each account and add it to sum
+      for (int accnt : customer) {
+        sum += accnt;
+      }
 
-            //keep track of sum
-            int sum = 0;
+      //compare previous customer rich or not
 
-            //go through each account and add it to sum
-            for (int accnt : customer) {
-
-
-                sum += accnt;
-            }
-
-            //compare previous customer rich or not
-
-            rich = Math.max(rich, sum);
-
-
-        }
-
-        return rich;
-
-
-
+      rich = Math.max(rich, sum);
     }
+
+    return rich;
+  }
 }
