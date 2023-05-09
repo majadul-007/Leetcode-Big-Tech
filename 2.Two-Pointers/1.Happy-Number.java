@@ -13,7 +13,7 @@ class Solution {
 
             int sum = 0;
 
-//check when n!= 0
+//check untill n!= 0
             while (n != 0) {
 
 //square of last digit
@@ -29,7 +29,7 @@ class Solution {
 //if not then sum is the new number
             n = sum;
 
-//check if it aready present in hashset
+//check if it already present in hashset
             if (usedIntegers.contains(n)) {
                 return false;
             }
