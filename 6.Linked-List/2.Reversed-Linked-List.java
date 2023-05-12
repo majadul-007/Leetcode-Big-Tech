@@ -71,8 +71,9 @@ class Solution {
 //point currentnode next value to previuos node
             currNode.next = prevNode;
 
-            //update the value
-            //shift the prevNode value to currentnode value and now currentNode will be currNode next value
+
+//shift the prevNode value to currentnode value and now currentNode will be currNode next value
+
             prevNode = currNode;
             currNode = nextNode;
 
