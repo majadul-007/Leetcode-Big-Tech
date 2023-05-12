@@ -44,6 +44,47 @@ class Solution {
 
 
 
+//pointer Approach without  using extra space, o(1) space complexity
+
+        //check if head is null or the linked list contain single value
+
+        if (head == null) {
+            return head;
+        }
+
+        if (head.next == null) {
+            return head ;
+        }
+
+//define the three pointer for previous node, currentNode, nextNode
+
+        ListNode prevNode = null;
+        ListNode currNode = head;
+        ListNode nextNode = null;
+
+        while (currNode != null) {
+
+//store the nextnode value which is current node next value
+
+            nextNode = currNode.next;
+
+//point currentnode next value to previuos node
+            currNode.next = prevNode;
+
+            //update the value
+            //shift the prevNode value to currentnode value and now currentNode will be currNode next value
+            prevNode = currNode;
+            currNode = nextNode;
+
+        }
+
+        head = prevNode;
+
+        return head;
+
+
+
+
 
         
     }
