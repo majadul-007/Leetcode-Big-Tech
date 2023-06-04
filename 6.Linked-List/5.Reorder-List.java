@@ -41,7 +41,8 @@ class Solution {
         }
 
 
-        ListNode l1 = head, l2 = prev;
+        ListNode l1 = head, l2 = prev; //store the first half as l1, and second half as l2
+
 
 //loop until l2 is not null
 
