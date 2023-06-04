@@ -28,9 +28,8 @@ class Solution {
 //reverse the second half
 
         ListNode mid = slow;
-        ListNode curr = mid;
-        ListNode prev = null;
-        ListNode next = null;
+        ListNode curr = mid, prev= null, next= null;
+        
 
         while (curr != null) {
 
