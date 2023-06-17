@@ -49,8 +49,8 @@ class Solution {
         int res = Integer.MIN_VALUE;
 
 
-        ListNode slow = head;
-        ListNode fast = head;
+        ListNode slow = head, fast = head;
+        
 
         //get the mid value after fast reached to null
 
@@ -69,7 +69,7 @@ class Solution {
 //loop till second half reached to null
 
         while (head2 != null) {
-    
+
             res = Math.max(res, head1.val + head2.val); //compare first half head and second half head
             head1 = head1.next;
             head2 = head2.next;
