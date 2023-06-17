@@ -28,10 +28,8 @@ class Solution {
 
             next = curr.next;
             curr.next = prev;
-
             prev = curr;
             curr = next;
-
 
         }
 
@@ -47,8 +45,6 @@ class Solution {
         //res for track the maximum sum
 
         int res = Integer.MIN_VALUE;
-
-
         ListNode slow = head, fast = head;
         
 
