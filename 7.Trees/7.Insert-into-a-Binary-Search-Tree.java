@@ -16,27 +16,67 @@
 class Solution {
     public TreeNode insertIntoBST(TreeNode root, int val) {
 
-        //check if root is null
+//******************Recursive Approach********************/
+
+//check if root is null
 
         if (root == null) {
 
             return new TreeNode(val);
         }
 
-//it's a bst so left subtree always less than root and right will be higher than root
+//its a bst so left subtree always less than root and right will be higher than root
 //check if val is less or greater than root
 
         if (val > root.val) {
 
-
             root.right = insertIntoBST(root.right, val); //recursively insert into right subtree
-        
         } else {
 
             root.left = insertIntoBST(root.left, val); //recursively insert into left subtree
         }
 
         return root;
+
+    }
+
+
+
+//*******************Iterative approach************************/
+
+    if (root == null) {
+
+        return new TreeNode(val);
+    }
+
+    TreeNode curr = root;
+
+    while (true) {
+
+        if (val > curr.val ) {
+
+//if root right value is null then create a new node with given val
+
+            if (curr.right == null) {
+                curr.right = new TreeNode(val);
+                return root;
+            }
+
+            curr = curr.right; //if not null shift the curr node to curr.right
+        } else {
+
+//if root left val is null then create a new node with given value
+            if (curr.left == null) {
+
+                curr.left = new TreeNode(val);
+                return root;
+            }
+
+            curr = curr.left;
+        }
+
+
+
 
     }
 }
