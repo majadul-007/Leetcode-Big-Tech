@@ -14,12 +14,11 @@ class BrowserHistory {
 
     public void visit(String url) {
 
-// Clear forward history as we are visiting a new URL
+// Clear forward history as we are visiting a new URl
 
         while (!fwdHistory.isEmpty()) {
             fwdHistory.pop();
         }
-
         currHistory.push(url);
 
 
@@ -31,7 +30,6 @@ class BrowserHistory {
         while (steps > 0  && currHistory.size() > 1) {
 
 // Move the current URL to the forward history stack
-
             fwdHistory.push(currHistory.pop());
             steps--; //decrease the steps
 
