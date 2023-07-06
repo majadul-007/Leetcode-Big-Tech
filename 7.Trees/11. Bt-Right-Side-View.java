@@ -1,23 +1,63 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
 class Solution {
-
     public List<Integer> rightSideView(TreeNode root) {
-        List<Integer> list = new ArrayList<Integer>();
-        if (root == null) return list;
-        bfs(list, root);
-        return list;
-    }
 
-    public void bfs(List<Integer> list, TreeNode root) {
-        Queue<TreeNode> q = new LinkedList<>();
-        q.offer(root);
-        while (!q.isEmpty()) {
-            int levelSize = q.size();
-            for (int i = 0; i < levelSize; i++) {
-                TreeNode cur = q.poll();
-                if (i == 0) list.add(cur.val);
-                if (cur.right != null) q.offer(cur.right);
-                if (cur.left != null) q.offer(cur.left);
-            }
+//arraylist for keep tracking right side value
+
+        List<Integer> list = new ArrayList<Integer>();
+
+        Queue<TreeNode> myQ = new LinkedList<>();
+
+//push the root value to queue
+
+        if (root != null) {
+            myQ.offer(root);
         }
+
+
+        while (!myQ.isEmpty()) {
+
+            int size = myQ.size();  //get the size of the queue
+
+            
+            for (int i = 0;i < size; i++) {
+
+                TreeNode curr = myQ.poll();
+
+//add the right most element
+                if (i == 0) {
+                    list.add(curr.val);
+                }
+
+//make sure that we first put right most element
+                if (curr.right != null) {
+
+                    myQ.offer(curr.right);
+                }
+
+                if (curr.left != null) {
+                    myQ.offer(curr.left);
+                }
+
+            }
+
+
+        }
+
+        return list;
     }
 }
