@@ -1,5 +1,6 @@
 class Solution {
     public int lastStoneWeight(int[] stones) {
+        
 
   //maxheap for pushing the heaviest stone
 
