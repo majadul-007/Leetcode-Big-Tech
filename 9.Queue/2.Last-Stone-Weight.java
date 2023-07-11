@@ -1,7 +1,7 @@
 class Solution {
     public int lastStoneWeight(int[] stones) {
 
- //maxheap for pushing the heaviest stone
+  //maxheap for pushing the heaviest stone
 
         PriorityQueue<Integer> maxHeap = new PriorityQueue();
 
