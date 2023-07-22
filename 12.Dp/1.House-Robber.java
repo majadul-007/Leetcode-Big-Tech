@@ -7,7 +7,7 @@ class Solution {
       return nums[0];
     }
 
-    //array for storing the maximum loot at each index
+    //array for storing  the maximum loot at each index
 
     int[] dp = new int[nums.length];
 
