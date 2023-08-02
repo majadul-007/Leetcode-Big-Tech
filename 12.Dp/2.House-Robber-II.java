@@ -19,10 +19,11 @@ class Solution {
 
     }
 
-    //loot from both side and find out will be maximum profitable
+    //loot from both side using helper function
 
     int lootSkippingLast = lootHelper(skipLastHouse);
     int lootSkippingFirst = lootHelper(skipFirstHouse);
+
 
     return Math.max(lootSkippingLast, lootSkippingFirst);
 
@@ -38,11 +39,8 @@ class Solution {
       return nums[0];
     }
 
-
-
-    //array for storing  the maximum loot at each index
-
     int[] dp = new int[nums.length];
+
 
     //Memorize maximum loot at first two index
 
