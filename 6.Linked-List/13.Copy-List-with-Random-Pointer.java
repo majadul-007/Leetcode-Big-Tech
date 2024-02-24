@@ -17,13 +17,12 @@ class Solution {
     public Node copyRandomList(Node head) {
 
 
-        if(head == null){
+        if (head == null) {
 
             return null;
         }
 
         Node curr = head;
-
 
         while (curr != null) {
 
@@ -36,7 +35,7 @@ class Solution {
 
         curr = head;
 
-        // Setting random pointers for new node
+      
 
         while (curr != null ) {
 
@@ -48,9 +47,6 @@ class Solution {
             curr = curr.next.next;
 
         }
-        
-
-        
 
         Node org = head, copy = head.next;
         Node temp = copy;
@@ -62,12 +58,12 @@ class Solution {
             if (copy.next == null) {
                 break;
             } else {
-            
-            copy.next = copy.next.next;
-            org = org.next;
-            copy = copy.next;
 
-        }
+                copy.next = copy.next.next;
+                org = org.next;
+                copy = copy.next;
+
+            }
         }
 
         return temp;
