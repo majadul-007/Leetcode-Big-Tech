@@ -17,12 +17,15 @@ class Solution {
     public Node copyRandomList(Node head) {
 
 
-        if (head == null) {
+        if(head == null){
 
             return null;
         }
 
         Node curr = head;
+
+
+// we traverse the original list and create a copy of each node
 
         while (curr != null) {
 
@@ -35,7 +38,7 @@ class Solution {
 
         curr = head;
 
-      
+        // we set the random pointers for the copy nodes
 
         while (curr != null ) {
 
@@ -47,6 +50,9 @@ class Solution {
             curr = curr.next.next;
 
         }
+        
+
+    // Now, we separate the original list from the copy list    
 
         Node org = head, copy = head.next;
         Node temp = copy;
@@ -58,12 +64,12 @@ class Solution {
             if (copy.next == null) {
                 break;
             } else {
+            
+            copy.next = copy.next.next;
+            org = org.next;
+            copy = copy.next;
 
-                copy.next = copy.next.next;
-                org = org.next;
-                copy = copy.next;
-
-            }
+        }
         }
 
         return temp;
